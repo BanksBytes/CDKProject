@@ -6,6 +6,8 @@ import aws_cdk as cdk
 from cdk_project.cdk_project_stack import CdkProjectStack
 
 from s3.s3stack import MyS3Stack
+from Pipeline.PipelineStack import PipelineStack
+from application.app_stack import AppStack
 
 
 app = cdk.App()
@@ -26,6 +28,10 @@ CdkProjectStack(app, "CdkProjectStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
-MyS3Stack(app, "MyS3Stack")
+#MyS3Stack(app, "MyS3Stack")
+AppStack(app, "MyAppStack")
+
+PipelineStack(app, "MyPipelineStack")
+
 
 app.synth()

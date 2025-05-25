@@ -4,7 +4,7 @@ from aws_cdk import (
     pipelines as pipelines,
 )
 from constructs import Construct
-from pipeline_stage import ApplicationStage
+from Pipeline.pipeline_stage import ApplicationStage
 
 class PipelineStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs):
@@ -19,7 +19,7 @@ class PipelineStack(Stack):
         synth = pipelines.ShellStep("Synth",
             input=source, 
             commands=[
-                "npm install -g aws-cdk",
+               # "npm install -g aws-cdk",
                 "python -m venv .venv",
                 "source .venv/bin/activate",
                 "pip install -r requirements.txt",
