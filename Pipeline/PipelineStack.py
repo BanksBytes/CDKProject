@@ -21,7 +21,7 @@ class PipelineStack(Stack):
             commands=[
                # "npm install -g aws-cdk",
                 "python -m venv .venv",
-                "source .venv/bin/activate",
+                ". .venv/bin/activate",
                 "pip install -r requirements.txt",
                 "cdk synth"
             ]
